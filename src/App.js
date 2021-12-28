@@ -11,7 +11,7 @@ function App() {
         <div className="displayWrapper">
           <h3 className="text-center mb-2">My NotePad</h3>
           <div className="row d-flex  justify-content-center">
-            <div className=" col-sm-12 col-md-6 col-lg-6 rightBar d-none d-md-block d-lg-block">
+            <div className=" col-sm-12 col-md-6 col-lg-6 leftBar d-none d-md-block d-lg-block">
               <lottie-player
                 className=""
                 autoplay
@@ -20,24 +20,44 @@ function App() {
                 src="https://assets2.lottiefiles.com/private_files/lf30_fvqxryww.json"
               ></lottie-player>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-6 leftBar  ">
+            <div className="col-sm-12 col-md-6 col-lg-6 rightBar  ">
               <div className="contentWrapper d-flex align-items-center justify-content-center">
                 <input
                   type="email"
-                  className="form-control w-50"
+                  className="form-control w-50 text-center"
                   id="exampleFormControlInput1"
-                  placeholder="name@example.com"
+                  placeholder="Add Task Here"
                 />
                 <button className="btn btn-success ml-2">Add Task</button>
               </div>
-              <div className="ml-5">
-                <ul>
-                  <li>Heloo thus </li>
-                  <li>Heloo</li>
-                  <li>Heloo</li>
-                  <li>Heloo</li>
-                  <li>Heloo</li>
-                  <li>Heloo</li>
+              <div className=" mt-3 TaskName">
+                <ul className=" ">
+                  <div className="taskList ">
+                    <li className=" w-75 m-2 p-1 text-dark d-flex justify-content-between  align-items-center">
+                      <span>🟢 Hello task</span>
+                      <button className="btn btn-dark">❌</button>
+                    </li>
+                    <li className=" w-75 m-2 p-1 text-dark d-flex justify-content-between  align-items-center">
+                      <span>🟢 Hello task</span>
+                      <button className="btn btn-dark">❌</button>
+                    </li>
+                    <li className=" w-75 m-2 p-1 text-dark d-flex justify-content-between  align-items-center">
+                      <span>🟢 Hello task</span>
+                      <button className="btn btn-dark">❌</button>
+                    </li>
+                    <li className=" w-75 m-2 p-1 text-dark d-flex justify-content-between  align-items-center">
+                      <span>🟢 Hello task</span>
+                      <button className="btn btn-dark">❌</button>
+                    </li>
+                    <li className=" w-75 m-2 p-1 text-dark d-flex justify-content-between  align-items-center">
+                      <span>🟢 Hello task</span>
+                      <button className="btn btn-dark">❌</button>
+                    </li>
+                    <li className=" w-75 m-2 p-1 text-dark d-flex justify-content-between  align-items-center">
+                      <span>🟢 Hello task</span>
+                      <button className="btn btn-dark">❌</button>
+                    </li>
+                  </div>
                 </ul>
               </div>
             </div>

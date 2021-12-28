@@ -19,3 +19,10 @@
   -webkit-box-shadow: 6px 6px 14px -3px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 6px 6px 14px -3px rgba(0, 0, 0, 0.49);
 }
+.TaskName {
+  margin-left:35px;
+}
+
+.rightBar {
+  border-left: 2px solid rgba(34, 34, 34, 0.727);
+}
