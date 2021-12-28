@@ -10,11 +10,12 @@ function App() {
     <div className="container d-flex align-items-center justify-content-center">
       <div className="mainWrapper d-flex align-items-center justify-content-center">
         <div className="displayWrapper">
-          <h3 className="text-center mb-2 tracking-in-expand">My NotePad</h3>
+          <h4 className="text-center mb-2 tracking-in-expand">My NotePad</h4>
+          <h6 className="text-center text-muted">Developed & Designed By Shamaun Nabi</h6>
           <div className="row d-flex  justify-content-center mt-3">
             <div className=" col-sm-12 col-md-6 col-lg-6 leftBar d-none d-md-block d-lg-block">
               <lottie-player
-                className=""
+                className="sideLogo"
                 autoplay
                 loop
                 mode="normal"

@@ -25,6 +25,11 @@
   /* overflow: hidden; */
 }
 
+.sideLogo{
+    width: 100px;
+    height:100px;
+}
+
 .TaskName {
   margin-left: 35px;
   /* overflow-y: scroll; */
