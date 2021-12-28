@@ -39,8 +39,9 @@
   border-left: 2px solid rgba(34, 34, 34, 0.727);
 }
 .addBtn {
-  height: 38px;
-  background-color: rgba(67, 67, 67, 0.029) !important;
+  height: 36px;
+  background-color: rgba(67, 67, 67, 0.713) !important;
+  
 }
 .addIcon {
   color: rgb(22, 148, 104);
