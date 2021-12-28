@@ -3,10 +3,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import ListItem from "./components/ListItem";
 import { useState } from "react";
+import Alert from "./components/Alert";
 // import { fab } from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const [inputValue, setinputValue] = useState("");
+  const [storeValue, setStoreValue] = useState([]);
+  const [alert, setAlert] = useState("d-none");
+  const getValue = (e) => {
+    setinputValue(e.target.value);
+  };
+  const addValue = (e) => {
+    e.preventDefault();
+    if (inputValue === "") {
+      // console.log("faka");
+      setAlert("d-block");
+     
+      // alert(" Fill Out This Field");
+    } else {
+      setAlert("d-none");
+      setStoreValue([...storeValue, inputValue]);
+      console.log("value from Input Value", inputValue);
+      console.log("value from Store Value", storeValue);
+    }
+  };
+
   return (
     // Remove this area and start your code
     <div className="container d-flex align-items-center justify-content-center">
@@ -29,25 +50,27 @@ function App() {
             <div className="col-sm-12 col-md-6 col-lg-6 rightBar  ">
               <form className="contentWrapper d-flex align-items-center justify-content-center">
                 <input
-                  type="email"
                   className="form-control w-75 text-center"
                   id="exampleFormControlInput1"
                   placeholder="Add Task Here"
                   required
+                  onChange={getValue}
                 />
+
                 <input
                   type="submit"
                   value="Add"
                   className="btn  text-white addBtn ml-2"
+                  onClick={addValue}
                 />
-                {/* <span className="material-icons addIcon">add_box</span> */}
-                {/* <span class="material-icons-two-tone">clear</span> */}
               </form>
+              <Alert typeAlert={alert} />
               <div className=" mt-3 TaskName">
                 <ul className="taskGroup ">
                   <div className="taskList">
-                    <ListItem />
-                    <ListItem />
+                    {storeValue.map((s) => {
+                      return <ListItem userValue={s} />;
+                    })}
                   </div>
                 </ul>
               </div>
