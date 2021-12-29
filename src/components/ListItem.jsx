@@ -8,8 +8,8 @@ export default function ListItem(props) {
           <span className="material-icons penIcon rotate-90-cw ">verified</span>
           <span className="ml-3">{props.userValue}</span>
         </div>
-        <button className="">
-          <span class="material-icons dltIcon">delete</span>
+        <button className="" onClick={props.itemDlt}>
+          <span className="material-icons dltIcon">delete</span>
         </button>
       </li>
     </>

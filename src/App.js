@@ -18,14 +18,25 @@ function App() {
     if (inputValue === "") {
       // console.log("faka");
       setAlert("d-block");
-     
+
       // alert(" Fill Out This Field");
     } else {
       setAlert("d-none");
       setStoreValue([...storeValue, inputValue]);
-      console.log("value from Input Value", inputValue);
-      console.log("value from Store Value", storeValue);
+      setinputValue("")
     }
+    // setinputValue("");
+  };
+
+  // Delete item from array with filter Method
+  const dltItem = (index) => {
+    console.log("item dlt", index);
+    setStoreValue((storeValue) => {
+      return storeValue.filter((el, id) => {
+        console.log("which", el);
+        return id !== index;
+      });
+    });
   };
 
   return (
@@ -33,9 +44,9 @@ function App() {
     <div className="container d-flex align-items-center justify-content-center">
       <div className="mainWrapper d-flex align-items-center justify-content-center">
         <div className="displayWrapper">
-          <h4 className="text-center mb-2 tracking-in-expand">My NotePad</h4>
+          <h4 className="text-center mb-2 tracking-in-expand">আমার নোট</h4>
           <h6 className="text-center text-muted">
-            Developed & Designed By Shamaun Nabi
+            ডেভেলপ এবং ডিজাইন করেছেন সামাউন নবী
           </h6>
           <div className="row d-flex  justify-content-center mt-3">
             <div className=" col-sm-12 col-md-6 col-lg-6 leftBar d-none d-md-block d-lg-block">
@@ -52,14 +63,16 @@ function App() {
                 <input
                   className="form-control w-75 text-center"
                   id="exampleFormControlInput1"
-                  placeholder="Add Task Here"
+                  placeholder="আপনার নোট যোগ করুন
+                  "
                   required
                   onChange={getValue}
+                  value={inputValue}
                 />
 
                 <input
                   type="submit"
-                  value="Add"
+                  value="যোগ"
                   className="btn  text-white addBtn ml-2"
                   onClick={addValue}
                 />
@@ -68,8 +81,14 @@ function App() {
               <div className=" mt-3 TaskName">
                 <ul className="taskGroup ">
                   <div className="taskList">
-                    {storeValue.map((s) => {
-                      return <ListItem userValue={s} />;
+                    {storeValue.map((s, id) => {
+                      return (
+                        <ListItem
+                          userValue={s}
+                          key={id}
+                          itemDlt={() => dltItem(id)}
+                        />
+                      );
                     })}
                   </div>
                 </ul>
